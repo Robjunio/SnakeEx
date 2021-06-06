@@ -46,6 +46,9 @@ ball_y = 0
 ball_dy = 10
 ball_dx = 10
 
+eat = pygame.mixer.Sound('assets/412068__inspectorj__chewing-carrot-a.wav')
+lose = pygame.mixer.Sound('assets/570633__bsp7176__gameover.mp3')
+
 
 def start():
     global snake, apple_pos, direction, ball_y,\
@@ -55,9 +58,10 @@ def start():
     apple_pos = spawn()
     link.fps = 8
     ball_x = 40
-    ball_y = randint(0,480)
+    ball_y = randint(0,460)
     ball_dy = 10
     ball_dx = 10
+
 
 def update():
     global snake, apple_pos, direction, ball_y,\
@@ -80,24 +84,31 @@ def update():
     if collision(snake[0], apple_pos):
         apple_pos = spawn()
         snake.append((0,0))
+        eat.play()
         
     for i in range(1, len(snake)):
         if collision(snake[0], snake[i]):
+            lose.play()
             return True
                 
     for i in range(len(snake)):
         if ball_x + 20 >= snake[i][0] >= ball_x:
             if ball_y+ 20 >= snake[i][1] >= ball_y:
-                 return True
+                lose.play()
+                return True
                 
 
     if snake[0][0] + 20 > 480:
+        lose.play()
         return True
     elif snake[0][1] + 20 > 480:
+        lose.play()
         return True
     elif snake[0][0] < 0:
+        lose.play()
         return True
     elif snake[0][1] < 0:
+        lose.play()
         return True
 
     random_direct = randint(1,2)   
