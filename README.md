@@ -9,5 +9,9 @@ Snake is a game that was known for several versions whose initial version starte
 |Left|⬅️|
 |Right|➡️|
 
+## Assets used:
+- Eating sound - [Chewing, Carrot, A](https://freesound.org/people/InspectorJ/sounds/412068/) from [InspectorJ](https://freesound.org/people/InspectorJ/) under [license](https://creativecommons.org/licenses/by-nc/3.0/).
+- Death sound - [gameover](https://freesound.org/people/bsp7176/sounds/570633/) from [bsp7176](https://freesound.org/people/bsp7176/) under [lincense](https://creativecommons.org/licenses/by-nc/3.0/).
+
 ## Developer:
 - Roberto Junio Rodrigues Gomes - [github](https://github.com/Robjunio)
